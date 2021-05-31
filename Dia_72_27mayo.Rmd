@@ -1,6 +1,15 @@
-# Dia_72_27mayo
+---
+title: "Dia_72_27mayo"
+author: "Daniel Felipe Villa Rengifo"
+date: "31/5/2021"
+output: html_document
+---
 
-```{r}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, eval=FALSE, include=TRUE}
 "Protocolo:
 
 1. Daniel felipe Villa Rengifo
@@ -138,3 +147,9 @@ dummy(students2$State, sep=".")
 # Sacamos un data.frame de students2, para el estado (anologo con departamento colombiano) y el genero:
 dummy.data.frame(students2, names = c("State", "Gender"), sep = ".")
 ```
+
+```{r, eval=FALSE, include=FALSE}
+library(knitr)
+purl("Dia_72_27mayo.Rmd", "main.r")
+```
+

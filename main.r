@@ -1,21 +1,18 @@
-# Dia_72_27mayo
-
-```{r}
-"Protocolo:
-
-1. Daniel felipe Villa Rengifo
-
-2. Lenguaje: R
-
-3. Tema: normalizacion y  creación de variables ficticias
-
-4. Fuentes:
-   https://rpubs.com/ydmarinb/429761"
-
-```
+## ---- eval=FALSE, include=TRUE--------------------------------------------------
+## "Protocolo:
+## 
+## 1. Daniel felipe Villa Rengifo
+## 
+## 2. Lenguaje: R
+## 
+## 3. Tema: normalizacion y  creación de variables ficticias
+## 
+## 4. Fuentes:
+##    https://rpubs.com/ydmarinb/429761"
+## 
 
 
-```{r}
+## -------------------------------------------------------------------------------
 housing <- read.csv("BostonHousing.csv")
 # Usamos la funcion "scale" (nota: esa función solo funciona para variables numericas)
 
@@ -38,11 +35,9 @@ housing.sd <- scale(housing, center = FALSE, scale = TRUE)
 # Queda igual, si no resta la media y no divide
 
 housing.none <- scale(housing, center = FALSE, scale = FALSE)
-```
 
 
-
-```{r}
+## -------------------------------------------------------------------------------
 
 # la siguinete funcion sirve para normalizar una multitud de variables
 
@@ -67,11 +62,9 @@ scale.many = function(dataframe, cols){
 #pruebo la función 
 
 housing <- scale.many(housing, c(1, 3, 5:8))
-```
 
-# Categorizando informacion numerica 
 
-```{r}
+## -------------------------------------------------------------------------------
 # lectura de la base datos es pequeña solo a modo de ejemplo 
 # se puede scalalar con la misma logica 
 students <- read.csv("data-conversion.csv")
@@ -111,12 +104,9 @@ students$Income.cat3 <- cut(students$Income,
                            labels = c("Level 1", "Level 2", 
                                       "Level 3", "Level 4")                          )
 
-```
- 
 
-# creando variables ficticias o ingles (dummy variables)
 
-```{r}
+## -------------------------------------------------------------------------------
 #Caragamos los datos 
 students2 <- read.csv("data-conversion.csv")
 
@@ -137,4 +127,3 @@ dummy(students2$State, sep=".")
 
 # Sacamos un data.frame de students2, para el estado (anologo con departamento colombiano) y el genero:
 dummy.data.frame(students2, names = c("State", "Gender"), sep = ".")
-```
